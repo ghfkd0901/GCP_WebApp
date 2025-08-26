@@ -52,6 +52,6 @@ def update(continent):
     return fig, f"표본 수: {len(dff):,}개"
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", "8080"))  # Cloud Run 기본 8080
+    port = int(os.getenv("PORT", "8080"))  # Cloud Run 기본 포트
     app.run(host="0.0.0.0", port=port, debug=False)
 

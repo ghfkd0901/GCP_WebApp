@@ -31,4 +31,5 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
   CMD curl -fs http://localhost:${PORT}/ || exit 1
 
 # ✅ 프로덕션 서버 실행 (gunicorn)
+ENV PORT=8080 DASH_SERVE_LOCALLY=1
 CMD ["gunicorn", "app:server", "-b", "0.0.0.0:${PORT}", "--workers=2", "--threads=4", "--timeout=120"]
